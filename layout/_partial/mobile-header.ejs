@@ -1,0 +1,26 @@
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="<%= url_for(config.home_dir || '/')%>" class="mobile-nav-link"><%- __('Menu.Home') %></a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="<%= url_for(config.archive_dir || '/')%>" class="mobile-nav-link"><%- __('Menu.Archives') %></a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="<%= url_for('/resume')%>" class="mobile-nav-link"><%- __('Menu.Resume') %></a>
+            </li>
+        </ul>
+    </nav>
+</header>

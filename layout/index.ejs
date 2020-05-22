@@ -1,0 +1,47 @@
+<div class="posts">
+    <div class="profile-margin card">
+        <div class="profile-wrapper">
+            <div class="profile">
+                <div class="profile-image"></div>
+            </div>
+            <div class="contents">
+                <p class="title"><%= config.profile.name %></p>
+                <p class="subtitle"><%= config.profile.job %></p>
+                <div class="sns-container">
+                    <a href="<%- url_for(config.profile.github) %>"><img class="icon" src="/css/images/github-icon.svg" alt='github-icon' /></a>
+                    <a href="<%- url_for(config.profile.facebook) %>"><img class="icon" src="/css/images/facebook-icon.svg" alt='facebook-icon' /></a>
+                    <a href="<%- url_for(config.profile.link) %>"><img class="icon" src="/css/images/link-icon.svg" alt='link-icon' /></a>
+                </div>
+                <div class="description">
+                    <p class="text"><%= config.profile.description %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="posts-contents">
+        <div class="tab-menu">
+            <div class="tab">
+                <span class="title">경력</span>
+            </div>
+            <ul class="tab-list">
+                <% config.companies.forEach(function (company) { %>
+                    <div class="tab-item" onclick="openWindow('<%- company.location %>')">
+                        <div class="image" style="background-image: url('<%- company.image %>')"></div>
+                        <div class="right">
+                            <span class="title"><%= company.title %></span>
+                            <div class="date-wrapper">
+                                <span class="date"><%= company.start_date %></span>
+                                <span class="date">~</span>
+                                <span class="date"><%= company.desti_date %></span>
+                            </div>
+                            <span class="job"><%= company.job %></span>
+                            <span class="description"><%= company.description %></span>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+</div>
+

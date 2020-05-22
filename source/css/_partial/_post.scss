@@ -1,0 +1,323 @@
+.post {
+  box-sizing: content-box;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.05);
+  padding: 36px;
+}
+
+@include max-screen() {
+  .post {
+    padding: 16px;
+  }
+}
+
+.profile-margin {
+  margin-bottom: 48px !important;
+}
+
+.card {
+  display: flex;
+  background-color: white;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  border: 1px solid transparent;
+  margin-bottom: 20px;
+
+  transition: border 0.3s;
+
+  &:hover {
+    border: 1px solid $theme-color-hover;
+  }
+
+  .profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 640px;
+    max-height: 480px;
+    padding: 0;
+
+    .profile {
+      width: 40%;
+      height: 100%;
+      border-right: 1px solid rgba(120, 120, 120, 0.1);
+
+      .profile-image {
+        width: 100%;
+        height: 100%;
+        background-image: url('https://avatars2.githubusercontent.com/u/6455767?s=460&v=4');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .contents {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 60%;
+      box-sizing: border-box;
+      padding: 24px;
+
+      .label-container {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        right: 24px;
+        top: 36px;
+        width: 60px;
+        height: 25px;
+        padding: 12px;
+        border-radius: 24px;
+        background-color: $theme-color-hover;
+
+        .label {
+          color: white;
+          font-weight: bold;
+          text-align: center;
+        }
+      }
+
+      .title {
+        font-size: 30px;
+        line-height: 1.2;
+        margin: 0 0 12px 0;
+        color: rgba(0, 0, 0, 0.8);
+      }
+
+      .subtitle {
+        line-height: 0;
+        margin: 0;
+        color: rgb(126, 126, 126);
+      }
+
+      .sns-container {
+        margin-top: 36px;
+
+        .icon {
+          width: 24px;
+          height: 24px;
+          margin-right: 16px;
+          cursor: pointer;
+
+          &:last-child() {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .description {
+        overflow-y: hidden;
+        padding: 0;
+
+        .text {
+          word-break: break-all;
+          color: rgb(126, 126, 126);
+        }
+      }
+    }
+  }
+
+  @include max-screen() {
+    .profile-wrapper {
+      flex-direction: column;
+      height: 100%;
+
+      .profile {
+        width: 100%;
+
+        .profile-image {
+          max-height: 480px;
+          min-height: 220px;
+        }
+      }
+
+      .contents {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include max-screen() {
+  .main {
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+    height: 100vh !important;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+
+    .content-inner {
+      width: 100%;
+    }
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+    margin: 0 !important;
+    padding: 0;
+  }
+
+  .paginator {
+    display: none;
+  }
+
+  // .posts-contents {
+  //   display: none;
+  // }
+
+  .footer-social {
+    display: none;
+  }
+
+  .contents {
+    box-sizing: border-box;
+  }
+}
+
+.post-abstract {
+  padding: 12px 24px 24px 24px;
+}
+
+.post-abstract,
+.post-whole {
+  padding-top: $post-abstract-top;
+
+  .post-title h2 {
+    font-weight: $global-font-weight;
+    font-size: 30px;
+    margin: 0 0 2px 0;
+  }
+
+  .post-title-link {
+    color: $black;
+  }
+
+  .post-title {
+    .post-meta {
+      margin-bottom: 36px;
+    }
+  }
+
+  .post-time,
+  .post-category,
+  .post-visit {
+    color: rgba(128, 128, 128, 0.8) !important;
+    font-size: $post-time-font;
+  }
+
+  .post-category,
+  .post-visit {
+    &::before {
+      content: '·';
+    }
+  }
+
+  .post-content {
+    font-weight: 300 !important;
+    font-family: $global-font-family !important;
+    font-size: $global-font-size;
+    padding-bottom: 48px;
+
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-weight: 500 !important;
+    }
+
+    h3,
+    h4 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-weight: 400 !important;
+    }
+
+    a {
+      color: $theme-color-base;
+      word-break: break-all;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    ul {
+      padding-left: 24px;
+      padding-right: 8px;
+
+      li {
+        &:nth-child(n + 2) {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+}
+
+// ==== post abstract ====
+.post-abstract {
+  padding-bottom: $post-abstract-bottom;
+  // border-bottom: $post-border;
+
+  .read-more {
+  }
+
+  .read-more-link {
+    font-size: 1.1em;
+    color: $theme-color-base;
+  }
+}
+
+// ==== post whole ====
+.post-whole {
+  .post-content {
+    border-bottom: 1px solid $gray;
+  }
+
+  .post-tag {
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    .tag {
+      border: 1px solid $theme-color-hover;
+      border-radius: 16px;
+      padding: 6px 12px 6px 12px;
+      margin-right: 6px;
+      color: $theme-color-base;
+      margin-bottom: 12px;
+
+      &::before {
+        content: '#';
+      }
+
+      &:hover {
+        color: $theme-color-hover;
+      }
+    }
+  }
+}
+
+// ==== Code, Toc ==== //
+@import 'post/code';
+@import 'post/toc';
+
+hr {
+  margin-top: 48px;
+  border: none;
+  height: 1px;
+  color: #bbb;
+  background: #bbb;
+  background-image: -webkit-linear-gradient(left, #eee, #777, #eee);
+  background-image: -moz-linear-gradient(left, #eee, #777, #eee);
+  background-image: -ms-linear-gradient(left, #eee, #777, #eee);
+}

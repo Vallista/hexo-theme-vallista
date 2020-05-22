@@ -1,0 +1,21 @@
+Menu:
+  Home: 홈
+  Archives: 포스트
+  Tags: 태그
+  About: 소개
+  Resume: 이력서
+
+Paginator:
+  Prev: 이전
+  Next: 다음
+  prev_post: 이전글
+  next_post: 다음글
+
+Post:
+  visit: 방문
+  readMore: 더보기
+
+copyright:
+  author: Vallista
+  link: Vallista
+  license: MIT

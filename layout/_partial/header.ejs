@@ -1,0 +1,24 @@
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            <% if (theme.menu.Home) { %>
+            <a href="<%= url_for(config.home_dir || '/')%>" class="header-nav-link" >
+                <%- __('Menu.Home') %>
+            </a>
+            <% } %>
+
+            <% if (theme.menu.Archives) { %>
+            <a href="<%= url_for(config.archive_dir)%>" class="header-nav-link">
+                <%- __('Menu.Archives')%>
+            </a>
+            <% } %>
+
+            <a href="<%= url_for(config.resume)%>" class="header-nav-link">
+                <%- __('Menu.Resume')%>
+            </a>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,40 @@
+.header {
+	position: relative;
+	// background: $header-background;
+	padding: $header-padding;
+	// box-shadow: $header-shadow;
+	font-family: $global-Lato-font-family;
+
+	.header-inner {
+		width: $main-content-width;
+		margin: 0 auto;
+		// padding-left: 24px;
+
+		.header-nav-link {
+			display: inline-block;
+			box-sizing: border-box;
+			// line-height: 50px;
+			// padding: 0 15px;
+			font-size: 15px;
+			padding: 12px;
+			color: $theme-color-hover;
+			background-color: rgb(255, 255, 255);
+			box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.05);
+			border-radius: 12px;
+			margin-left: 12px;
+			transition: 0.2s;
+
+			&:hover {
+				color: rgb(255, 255, 255);
+				background-color: $theme-color-hover;
+				opacity: 0.8;
+			}
+		}
+	}
+}
+
+@include max-screen() {
+	.header {
+		display: none;
+	}
+}
